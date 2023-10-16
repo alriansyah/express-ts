@@ -9,12 +9,7 @@
             "#models/*": ["src/models/*"],
             "#routes/*":["src/routes/*"],
             "#controllers/*":["src/controllers/*"],
-            "#utils/*": ["src/utils/*"],
-            "#class/*": ["src/class/*"],
-            "#events/*" : ["src/events/*"],
-            "#config/*": ["src/config/*"],
-            "#loaders/*": ["src/loaders/*"],
-            "#cert/*":["certificate/*"]
+            "#utils/*": ["src/utils/*"]
         },
         "rootDir": "src",
         "outDir": "dist",

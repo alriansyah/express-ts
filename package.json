@@ -19,6 +19,12 @@
       "pre-push": "npx build --aot true"
     }
   },
+  "imports": {
+    "#models/*": "./src/models/*.ts",
+    "#routes/*": "./src/routes/*.ts",
+    "#controllers/*": "./src/controllers/*.ts",
+    "#utils/*": "./src/utils/*.ts"
+  },
   "author": "Al Riansyah",
   "license": "ISC",
   "devDependencies": {
