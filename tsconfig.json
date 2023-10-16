@@ -12,7 +12,8 @@
             "#utils/*": ["src/utils/*"],
             "#config/*": ["src/config/*"],
             "#services/*": ["src/services/*"],
-            "#validations/*": ["src/validations/*"]
+            "#validations/*": ["src/validations/*"],
+            "#types/*": ["src/validations/*"]
         },
         "rootDir": "src",
         "outDir": "dist",

@@ -26,13 +26,15 @@
     "#utils/*": "./src/utils/*.ts",
     "#config/*": "./src/config/*.ts",
     "#services/*": "./src/services/*.ts",
-    "#validations/*": "./src/validations/*.ts"
+    "#validations/*": "./src/validations/*.ts",
+    "#types/*": "./src/types/*.ts"
   },
   "author": "Al Riansyah",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.14",
     "@types/express": "^4.17.19",
+    "@types/uuid": "^9.0.5",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
     "eslint": "^8.51.0",
@@ -59,6 +61,7 @@
     "mongoose": "^7.6.2",
     "nodemon": "^3.0.1",
     "pino": "^8.16.0",
-    "pino-pretty": "^10.2.3"
+    "pino-pretty": "^10.2.3",
+    "uuid": "^9.0.1"
   }
 }
