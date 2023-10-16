@@ -1,4 +1,9 @@
-import express, { Application, Request, Response, NextFunction } from 'express';
+import express from 'express';
+
+type Application = express.Application;
+type Request = express.Request;
+type Response = express.Response;
+type NextFunction = express.NextFunction;
 
 const app: Application = express();
 const port: number = 3001;
