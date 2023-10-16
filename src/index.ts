@@ -4,6 +4,9 @@ import { logger } from './utils/logger';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 
+// Connect DB
+import './utils/connectDB';
+
 type Application = express.Application;
 
 const app: Application = express();

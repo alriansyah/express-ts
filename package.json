@@ -23,7 +23,10 @@
     "#models/*": "./src/models/*.ts",
     "#routes/*": "./src/routes/*.ts",
     "#controllers/*": "./src/controllers/*.ts",
-    "#utils/*": "./src/utils/*.ts"
+    "#utils/*": "./src/utils/*.ts",
+    "#config/*": "./src/config/*.ts",
+    "#services/*": "./src/services/*.ts",
+    "#validations/*": "./src/validations/*.ts"
   },
   "author": "Al Riansyah",
   "license": "ISC",
@@ -49,9 +52,11 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "joi": "^17.11.0",
     "moment": "^2.29.4",
+    "mongoose": "^7.6.2",
     "nodemon": "^3.0.1",
     "pino": "^8.16.0",
     "pino-pretty": "^10.2.3"

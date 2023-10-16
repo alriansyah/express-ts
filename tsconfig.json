@@ -9,7 +9,10 @@
             "#models/*": ["src/models/*"],
             "#routes/*":["src/routes/*"],
             "#controllers/*":["src/controllers/*"],
-            "#utils/*": ["src/utils/*"]
+            "#utils/*": ["src/utils/*"],
+            "#config/*": ["src/config/*"],
+            "#services/*": ["src/services/*"],
+            "#validations/*": ["src/validations/*"]
         },
         "rootDir": "src",
         "outDir": "dist",

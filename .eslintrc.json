@@ -23,6 +23,9 @@
     "@typescript-eslint/member-delimiter-style": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "no-return-assign": "off",
-    "array-callback-return": "off"
+    "array-callback-return": "off",
+    "@typescript-eslint/quotes": "off",
+    "n/handle-callback-err": "off",
+    "@typescript-eslint/no-misused-promises": "off"
   }
 }
