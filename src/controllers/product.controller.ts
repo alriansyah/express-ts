@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import { createProductValidation } from '../validations/product.validation';
+import { createProductValidation, updateProductValidation } from '../validations/product.validation';
 import { logger } from '../utils/logger';
-import { addProductToDB, getProductById, getProductFromDB } from '#services/product.services';
+import { addProductToDB, getProductById, getProductFromDB, updateProductById } from '#services/product.services';
 import { v4 as uuidv4 } from 'uuid';
 
 export const createProduct = async (req: Request, res: Response) => {
@@ -64,6 +64,41 @@ export const getProduct = async (req: Request, res: Response) => {
       status: true,
       statusCode: 200,
       data: products
+    });
+  }
+};
+
+export const updateProduct = async (req: Request, res: Response) => {
+  const {
+    params: { id }
+  } = req;
+
+  const { error, value } = updateProductValidation(req.body);
+  if (error) {
+    logger.error('ER: product-create = ', error.details[0].message);
+    res.status(422).send({
+      status: false,
+      statusCode: 422,
+      message: error.details[0].message,
+      data: {}
+    });
+  }
+
+  try {
+    console.log(value);
+    await updateProductById(id, value);
+    logger.info('Success update product');
+    return res.status(200).send({
+      status: true,
+      statusCode: 200,
+      message: 'Update product success'
+    });
+  } catch (error) {
+    logger.error('ER: product-create = ', error);
+    res.status(422).send({
+      status: false,
+      statusCode: 422,
+      message: error
     });
   }
 };
