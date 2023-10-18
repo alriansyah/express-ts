@@ -1,0 +1,51 @@
+Setup express ts :
+- npm init
+- npm install -D typescript ts-node
+- npx tsc --init (generate tsconfig.json)
+- npm i nodemon
+- add file nodemon.json (copas dari tutor)
+- npm i express
+- npm i -D @types/express
+- npx eslint --init (pilih setiap opsi : 
+	- To check syntax, find problems, and enforce code style
+	- JavaScript modules (import/export)
+	- pilih Node, unchecklist gunakan spasi
+	- Use a popular style guide
+	- Standard: https://github.com/standard/eslint-config-standard-with-typescript
+	- JSON
+)(instal extension eslint juga)
+- npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-standard eslint-plugin-import eslint-plugin-node eslint-plugin-promise eslint-plugin-standard
+- npm install --save-dev --save-exact prettier
+- setup prettier .etc (copas dari tutor)
+- npm i -D husky pretty-quick (untuk memastikan sebelum commit guthub: apakah setiap code yang ada telah sesuai dengan format yang sudah di definisikan di eslint, prettier dan build tidak error)
+- tambahkan husky di package.json (copas dari tutor)
+- git init
+- npm run prepare (lanjut ke setup husky)
+- npm i pino pino-pretty
+- npm i body-parser
+- npm i cors
+- npm i --save-dev @types/cors
+- npm i moment
+- npm i joi
+- npm i mongoose
+- npm i dotenv
+- npm i uuid
+- npm i --save-dev  @types/uuid
+- npm i bcrypt
+- npm i -D  @types/bcrypt
+- npm i jsonwebtoken
+- npm i -D @types/jsonwebtoken
+
+setup husky :
+- buat file pre-commit di folder husky (copas dari tutor)
+- icacls ".husky\*" /grant %alriansyah%:RX
+- icacls ".git\hooks\*" /grant %alriansyah%:RX
+- setup berhasil
+- npm run format (lakukan sebelum commit / add .)
+
+
+setup jwt :
+- cari rsa generator di google (travistidwell.com)
+- generate key (2048 bit)	
+- copas public key dan privat key ke environment di folder config
+- setup jwt.ts di folder utils

@@ -7,6 +7,8 @@ import bodyParser from 'body-parser';
 // Connect DB
 import './utils/connectDB';
 
+import deserializedToken from './middleware/deserializeToken';
+
 type Application = express.Application;
 
 const app: Application = express();
@@ -24,6 +26,8 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', '*');
   next();
 });
+
+app.use(deserializedToken);
 
 routes(app);
 
