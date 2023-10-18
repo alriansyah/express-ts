@@ -12,8 +12,12 @@ export interface UserLoginType {
   password?: string;
 }
 
-export interface RequestLocals {
-  locals: {
-    user?: any; // Adjust the type of 'user' as per your application's requirements
-  };
+export interface UserInfo {
+  _id: String;
+  user_id: String;
+  name: String;
+  email: String;
+  role: String;
+  iat: Number | any;
+  exp: Number | any;
 }
