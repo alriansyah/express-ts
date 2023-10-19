@@ -35,6 +35,8 @@ Setup express ts :
 - npm i -D  @types/bcrypt
 - npm i jsonwebtoken
 - npm i -D @types/jsonwebtoken
+- npm i moment-timezone
+- npm i -D @types/moment-timezone
 
 setup husky :
 - buat file pre-commit di folder husky (copas dari tutor)
@@ -49,3 +51,12 @@ setup jwt :
 - generate key (2048 bit)	
 - copas public key dan privat key ke environment di folder config
 - setup jwt.ts di folder utils
+
+
+Authentication: mengacu pada proses verifikasi siapa seseorang itu
+Autorization: proses verifikasi sumber daya apa yang dapat pengguna akses
+
+- express-rate-limit (untuk pembatas kecepatan untuk route login )
+
+
+api country belum ada pengkondisian pada endpoit get, untuk handling errornya

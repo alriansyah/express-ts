@@ -12,7 +12,8 @@ import jwtDecode from 'jwt-decode';
 moment.tz.setDefault('Asia/Jakarta');
 
 export const registerUser = async (req: Request, res: Response) => {
-  req.body.user_id = uuidv4();
+  req.body._id = uuidv4();
+  req.body.user_id = uuidv4().substring(0, 6);
   const { error, value } = createUserValidation(req.body);
   if (error) {
     logger.error('ER: auth - register = ', error.details[0].message);
@@ -75,8 +76,9 @@ export const createSession = async (req: Request, res: Response) => {
       role: user.role
     };
 
-    const accessToken = signJWT(tokenPayload, { expiresIn: '1d' });
+    const accessToken = signJWT(tokenPayload, { expiresIn: '10s' });
     const userInfo: UserInfo = jwtDecode(accessToken);
+    const refreshToken = signJWT(tokenPayload, { expiresIn: '1d' });
 
     return res.status(200).send({
       status: true,
@@ -88,7 +90,8 @@ export const createSession = async (req: Request, res: Response) => {
         role: user.role,
         tokenCreated: moment.unix(userInfo.iat).format('DD-MM-YYYY HH:mm:ss'),
         tokenExpired: moment.unix(userInfo.exp).format('DD-MM-YYYY HH:mm:ss'),
-        accessToken
+        accessToken,
+        refreshToken
       }
     });
   } catch (error: any) {
