@@ -120,7 +120,7 @@ export const refreshSession = async (req: Request, res: Response) => {
   try {
     const { decoded }: any = verifyJWT(value.refreshToken);
 
-    const user = await findUserByEmail(decoded._doc.email);
+    const user = await findUserByEmail(decoded.email);
     if (!user) return false;
 
     const tokenPayload = {
@@ -139,11 +139,6 @@ export const refreshSession = async (req: Request, res: Response) => {
       statusCode: 200,
       message: 'Refresh session success',
       data: {
-        name: user.name,
-        email: user.email,
-        role: user.role,
-        tokenCreated: moment.unix(userInfo.iat).format('DD-MM-YYYY HH:mm:ss'),
-        tokenExpired: moment.unix(userInfo.exp).format('DD-MM-YYYY HH:mm:ss'),
         accessToken
       }
     });
